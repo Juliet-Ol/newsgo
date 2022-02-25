@@ -2,18 +2,18 @@
 # from email import message
 # from turtle import title
 # from turtle import title
-from flask import render_template
+# from crypt import methods
+# from flask import render_template
 from app import app
 #from app.request import get_news
 
+from app.request import get_news
+from flask import render_template
+
 @app.route('/')
 def index():
-    '''
-    View root page function that returns index page
-    '''
-
-    message = 'News on the go'
-    return render_template('index.html',message = message)
+    headline = get_news('cnn')
+    return render_template('index.html', headline = headline)
 
 # @app. route('/news/<int:news_id>')
 # def news(news_id):
