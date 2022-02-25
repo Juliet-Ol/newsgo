@@ -8,7 +8,7 @@ class Config:
     '''
     Configuration of parent class
     '''
-    NEWS_API_KEY = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=API_KEY'
+    # NEWS_API_KEY = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=API_KEY'
     pass
 
 #configuration used in production stages, inherits from parent

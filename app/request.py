@@ -1,5 +1,7 @@
 # from email.mime import base
 # from webbrowser import get
+# from turtle import title
+# from xml.sax import default_parser_list
 from app import app
 import urllib.request,json
 from .models import news
@@ -28,7 +30,27 @@ def get_news(category):
             news_results_list = get_news_response['results']
             news_results = process_results(news_results_list)
 
-def process_results(news_list):           
+def process_results(news_list):
+    '''
+    Function that process the news result and transform to a list 
+    
+    Args:
+        news_list: A list of dictionaries that contain news default_parser_list
 
-return news_results            
+    Returns:  
+        news_results: A list of news objects 
+    '''
+
+    news_results = []
+    for news_item in news_list:
+        id = news_item.get('id')
+        title = news_item.get('headline_title')
+        story = story_item.get('story')
+        author = author_item.get('author')
+
+        if author:
+            news_object = News(id,title,)
+            news_results.append(news.object)                
+
+    return news_results           
 
