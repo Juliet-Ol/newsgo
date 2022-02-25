@@ -3,10 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    { % if title % }
-    <title> {{<title}} </title>
-    { % else %}    
+    {% if title %}
+    <title> {{ title }} </title>
+    {% else %}
     <title>Keep up with the latest and hotest news</title>
+    {% endif %}
 </head>
 <body>
     <!-- headline news -->
