@@ -12,7 +12,7 @@ class NewsTest(unittest.TestCase):
         '''
         Set up method to run before every Test
         '''
-        self.new_news = News (1234, 'apples and more apples', 'for apples','https://newsapi.org/v2/everything?q=Apple&from=2022-02-25&sortBy=popularity&apiKey=API_KEY')
+        self.new_news = News (12345, 'apples and more apples', 'for apples','https://newsapi.org/v2/everything?q=Apple&from=2022-02-25&sortBy=popularity&apiKey=API_KEY')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_news, News))
