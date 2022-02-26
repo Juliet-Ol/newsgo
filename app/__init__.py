@@ -1,7 +1,8 @@
-from ensurepip import bootstrap
+# from ensurepip import bootstrap
 from flask import Flask
 from .config import DevConfig
 from flask_bootstrap import Bootstrap
+from app import error
 
 #Initializing application
 app = Flask(__name__,instance_relative_config=True)
