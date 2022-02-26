@@ -1,20 +1,19 @@
 {% import 'macros.html' as macro%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-    <title> {{ title }} </title>
-    {% else %}
-    <title>Keep up with the latest and hotest news</title>
-    {% endif %}
-</head>
-<body>
+{% extends 'base.html' %}
+
     <!-- headline news -->
+    {% block content %}
+    {{ macro.filterNews(search) }}
+    {{ macro.displayNewsSources(sources) }}
+
+    
     <h2> headline news </h2>
+    
     <ul>
-    {{ macro.displayNewsList(headline)}}
+        {{ macro.displayNewsList(headline)}}    
+         
     </ul>  
+    {% endblock%}  
     
 </body>
 </html>

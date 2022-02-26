@@ -1,3 +1,12 @@
+{% macro displayNewsSources(sources) %}
+
+    {% for source in sources %}
+    <a href="/source?s={{ source.id }}">
+        <li>{{ source.name }}</li>
+    </a>
+    {% endfor %}
+{% endmacro %}
+
 {% macro displayNewsList(news_list) %}
 
     {% for news in news_list %}
@@ -6,4 +15,11 @@
             <li>{{ news.title}}</li>
         </a>
     {% endfor %}
+{% endmacro %}
+
+{% macro filterNews(search) %}
+        <form action="search" method="POST">
+            <input type="text" name="search" value="{{ search }}">
+            <input type="submit" name="Search" />
+        </form>
 {% endmacro %}
