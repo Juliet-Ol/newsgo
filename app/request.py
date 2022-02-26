@@ -62,13 +62,14 @@ def process_results(news_list):
     for news_item in news_list:
         url = news_item.get('url')
         title = news_item.get('title')
-        urlToImage = news_item.get('urlToImage')
+        
         author = news_item.get('author')
         description = news_item.get('description')
         publishedAt = news_item.get('publishedAt')
         content = news_item.get('content')
+        urlToImage = news_item.get('urlToImage')
 
-        news = News(url, title, urlToImage, author, description, publishedAt, content)
+        news = News(url, title,  author, description, publishedAt, content, urlToImage)
 
         news_results.append(news)                
 
