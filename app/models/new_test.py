@@ -1,5 +1,5 @@
 import unittest
-from models import news
+from app.models import news
 News = news.news
 
 #creating test classes

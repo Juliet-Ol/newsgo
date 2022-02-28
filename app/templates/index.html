@@ -3,17 +3,52 @@
 
     <!-- headline news -->
     {% block content %}
-    {{ macro.filterNews(search) }}
-    {{ macro.displayNewsSources(sources) }}
 
-    
-    <h2> headline news </h2>
-    
-    <ul>
-        {{ macro.displayNewsList(headline)}}    
-         
-    </ul>  
+    <div class="container">
+        <h3>News Sources</h3>
+
+        <div>
+            {{ macro.filterNews(search) }}
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    {% for source in sources %}
+                    <a href="/?s={{ source.id }}" class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        <li style="list-style-type: none;">{{ source.name }}</li>
+                    </h4>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="col-md-9">
+                <h4>Latest News</h4>
+                {% for news in news_list %}
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                            <img style="width: 150px;" class="media-object" src="{{ news.urlToImage }}" alt="{{ news.title}}">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="{{ news.url }}">
+                                    <li style="list-style-type: none;">{{ news.title}}</li>
+                                </a>
+                            </h4>
+                            <div>
+                                <div style="font-size: 14px;">Author: {{ news.author }}</div>
+                                <div style="font-size: 12px;">Published At: {{ news.publishedAt }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     {% endblock%}  
     
-</body>
-</html>

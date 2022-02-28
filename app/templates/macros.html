@@ -18,8 +18,11 @@
 {% endmacro %}
 
 {% macro filterNews(search) %}
-        <form action="search" method="POST">
-            <input type="text" name="search" value="{{ search }}">
-            <input type="submit" name="Search" />
+    <div class="container">    
+        <form action="/" method="POST">
+            <input type="text" name="search" placeholder="Search any news" value="{{ search }}">
+            <input type="submit" Value="Submit" class="btn btn-default" />
         </form>
+    </div>    
 {% endmacro %}
+

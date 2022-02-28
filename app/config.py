@@ -1,8 +1,8 @@
 #creating classes to fit our needs
 
 #configuration used in poduction and development
-from instance.config import NEWS_API_KEY
 
+from instance.config import NEWS_API_KEY
 
 class Config:
     '''
